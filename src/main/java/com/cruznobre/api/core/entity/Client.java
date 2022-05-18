@@ -1,5 +1,6 @@
 package com.cruznobre.api.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -24,6 +25,7 @@ public class Client {
     @Column(unique = true, length = 11)
     private String cpf;
     @Column(name = "data_cadastro")
+    @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate insertDate;
 
     @Override
