@@ -38,4 +38,9 @@ public class Client {
     public int hashCode() {
         return getClass().hashCode();
     }
+
+    @PrePersist
+    public void preProcess(){
+        this.insertDate = LocalDate.now();
+    }
 }
